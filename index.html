@@ -42,8 +42,8 @@
         <section class="contact" id="contact">
             <h2>Stay Updated</h2>
             <p>Enter your email to join our mailing list and receive the latest updates on our progress and offerings.</p>
-            <form action="mailto:farzanberoz@feelbest.tech" method="post" enctype="text/plain">
-                <input type="email" name="email" placeholder="Your Email" required>
+            <form id="subscribeForm">
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
                 <button type="submit" class="cta-button">Subscribe</button>
             </form>
         </section>
@@ -67,5 +67,21 @@
             <p>&copy; 2024 Feel Best Technologies. All rights reserved.</p>
         </div>
     </footer>
+<script>
+    document.getElementById('subscribeForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const email = document.getElementById('email').value;
+
+        // Here you can handle the email, e.g., send it to your server or log it
+        console.log('Email submitted:', email);
+
+        // Optionally, show a message to the user
+        alert('Thank you for subscribing!');
+
+        // Clear the input field
+        document.getElementById('email').value = '';
+    });
+</script>
 </body>
 </html>
